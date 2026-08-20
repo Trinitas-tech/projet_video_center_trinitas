@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'reset.check_email.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center">
+        <div class="card bg-black text-light" style="max-width: 500px; width: 100%;">
+            <div class="card-body text-center">
+                <h1 class="h3 mb-4">{{ 'reset.check_email.title'|trans }}</h1>
+                <p>
+                    {{ 'reset.check_email.body'|trans({'%lifetime%': resetToken.expirationMessageData['%count%'] ?? 1}) }}
+                </p>
+                <p>{{ 'reset.check_email.spam'|trans }}</p>
+                <a href="{{ path('app_forgot_password_request') }}" class="btn btn-secondary">{{ 'reset.check_email.retry'|trans }}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,116 @@
+nav:
+    home: Home
+    create_video: Create a video
+    search: Search
+    search_placeholder: Search for a video...
+    profile: My profile
+    logout: Log out
+    register: Sign up
+    login: Log in
+
+home:
+    title: Home
+    welcome: Welcome to Video Center
+    subtitle: On this site you will find many interesting videos.
+    no_videos: No videos yet.
+
+search:
+    title: Search
+    results_for: 'Results for "%term%"'
+    count: '{0} No videos found|{1} 1 video found|]1,Inf[ %count% videos found'
+    no_results: No videos match your search.
+
+video:
+    premium: Premium
+    posted: Posted
+    posted_on: Posted on
+    updated_on: Updated on
+    by: by
+    delete_confirm: Do you really want to delete this video?
+    create:
+        title: Add a video
+    edit:
+        title: Edit the video
+    form:
+        title: Title
+        link: Video link
+        description: Description
+        premium: Premium video
+
+action:
+    edit: Edit
+    delete: Delete
+    back: Back
+    save: Save
+
+login:
+    title: Log in
+    error: Incorrect email or password.
+    forgot_password: Forgot your password?
+    remember_me: Remember me
+    submit: Log in
+    no_account: Not registered yet?
+    create_account: Create an account
+
+registration:
+    title: Create an account
+    submit: Sign up
+    already_account: Already have an account?
+
+profile:
+    title: My profile
+    image_alt: Profile picture
+    member_since: Member since
+    verified: Verified account
+    not_verified: Unverified account
+    edit: Edit my profile
+    my_videos: My videos
+    no_videos: You have not posted any videos yet.
+
+reset:
+    title: Forgot password
+    intro: Enter your email address and we will send you a link to reset your password.
+    submit: Send the link
+    check_email:
+        title: Email sent
+        body: 'If an account exists with this email, a reset link has just been sent to you. This link expires in %lifetime% hour(s).'
+        spam: "If you don't receive the email, check your spam folder or try again."
+        retry: Try again
+    new_password:
+        title: New password
+        submit: Change password
+
+form:
+    email: Email
+    password: Password
+    new_password: New password
+    repeat_password: Repeat password
+    firstname: First name
+    lastname: Last name
+    profile_image: Profile picture
+
+flash:
+    welcome: Welcome to Video Center!
+    confirmation_sent: A confirmation email has been sent to you. Click the link to verify your account (valid for 5 hours).
+    email_verified: Your email address has been verified!
+    video_created: The video has been created!
+    video_updated: The video has been updated!
+    video_deleted: The video has been deleted!
+    profile_updated: Your profile has been saved!
+    password_changed: Your password has been changed!
+    premium_denied: This video is reserved for verified users.
+    owner_only: Only the creator of the video can perform this action.
+    verified_only: You must verify your email address to create a video.
+
+email:
+    signature: — The Video Center team
+    verify:
+        subject: Confirm your email address
+        title: Welcome to Video Center!
+        body: Thank you for signing up. Click the link below to confirm your email address.
+        button: Confirm my email
+    reset:
+        subject: Reset your password
+        title: Password reset
+        body: 'To reset your password, click the following link:'
+        expiry: 'This link will expire in'

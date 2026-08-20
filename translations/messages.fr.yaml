@@ -1,0 +1,116 @@
+nav:
+    home: Accueil
+    create_video: Créer une vidéo
+    search: Rechercher
+    search_placeholder: Rechercher une vidéo...
+    profile: Mon profil
+    logout: Se déconnecter
+    register: S'inscrire
+    login: Se connecter
+
+home:
+    title: Accueil
+    welcome: Bienvenue dans Vidéo Center
+    subtitle: Sur ce site vous trouverez plusieurs vidéos intéressantes.
+    no_videos: Aucune vidéo pour le moment.
+
+search:
+    title: Recherche
+    results_for: 'Résultats pour « %term% »'
+    count: '{0} Aucune vidéo trouvée|{1} 1 vidéo trouvée|]1,Inf[ %count% vidéos trouvées'
+    no_results: Aucune vidéo ne correspond à votre recherche.
+
+video:
+    premium: Premium
+    posted: Postée
+    posted_on: Postée le
+    updated_on: Modifiée le
+    by: par
+    delete_confirm: Voulez-vous vraiment supprimer cette vidéo ?
+    create:
+        title: Ajout d'une vidéo
+    edit:
+        title: Éditer la vidéo
+    form:
+        title: Titre
+        link: Lien Vidéo
+        description: Description
+        premium: Vidéo premium
+
+action:
+    edit: Éditer
+    delete: Supprimer
+    back: Retour
+    save: Enregistrer
+
+login:
+    title: Se connecter
+    error: Email ou mot de passe incorrect.
+    forgot_password: Mot de passe oublié ?
+    remember_me: Se souvenir de moi
+    submit: Se connecter
+    no_account: Pas encore enregistré ?
+    create_account: Crée un compte
+
+registration:
+    title: Créer un compte
+    submit: S'inscrire
+    already_account: Déjà un compte ?
+
+profile:
+    title: Mon profil
+    image_alt: Photo de profil
+    member_since: Membre depuis le
+    verified: Compte vérifié
+    not_verified: Compte non vérifié
+    edit: Modifier mon profil
+    my_videos: Mes vidéos
+    no_videos: Vous n'avez pas encore posté de vidéo.
+
+reset:
+    title: Mot de passe oublié
+    intro: Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.
+    submit: Envoyer le lien
+    check_email:
+        title: Email envoyé
+        body: 'Si un compte existe avec cet email, un lien de réinitialisation vient de vous être envoyé. Ce lien expire dans %lifetime% heure(s).'
+        spam: "Si vous ne recevez pas l'email, vérifiez votre dossier spam ou réessayez."
+        retry: Réessayer
+    new_password:
+        title: Nouveau mot de passe
+        submit: Changer le mot de passe
+
+form:
+    email: Email
+    password: Mot de passe
+    new_password: Nouveau mot de passe
+    repeat_password: Confirmer le mot de passe
+    firstname: Prénom
+    lastname: Nom
+    profile_image: Photo de profil
+
+flash:
+    welcome: Bienvenue sur Vidéo Center !
+    confirmation_sent: Un email de confirmation vous a été envoyé. Cliquez sur le lien pour vérifier votre compte (valable 5 heures).
+    email_verified: Votre adresse email a bien été vérifiée !
+    video_created: La vidéo a bien été créée !
+    video_updated: La vidéo a bien été modifiée !
+    video_deleted: La vidéo a bien été supprimée !
+    profile_updated: Votre profil a bien été enregistré !
+    password_changed: Votre mot de passe a bien été modifié !
+    premium_denied: Cette vidéo est réservée aux utilisateurs vérifiés.
+    owner_only: Seul le créateur de la vidéo peut effectuer cette action.
+    verified_only: Vous devez vérifier votre adresse email pour créer une vidéo.
+
+email:
+    signature: — L'équipe Vidéo Center
+    verify:
+        subject: Confirmez votre adresse email
+        title: Bienvenue sur Vidéo Center !
+        body: Merci de votre inscription. Cliquez sur le lien ci-dessous pour confirmer votre adresse email.
+        button: Confirmer mon email
+    reset:
+        subject: Réinitialisation de votre mot de passe
+        title: Réinitialisation du mot de passe
+        body: Pour réinitialiser votre mot de passe, cliquez sur le lien suivant :
+        expiry: 'Ce lien expirera dans'

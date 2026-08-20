@@ -1,0 +1,33 @@
+registration:
+    email_already_used: An account already exists with this email.
+
+validation:
+    email:
+        not_blank: The email cannot be empty.
+        invalid: The email is not valid.
+        max_length: The email cannot exceed {{ limit }} characters.
+    password:
+        not_blank: The password cannot be empty.
+        mismatch: The passwords do not match.
+        min_length: The password must contain at least {{ limit }} characters.
+    firstname:
+        not_blank: The first name cannot be empty.
+        max_length: The first name cannot exceed {{ limit }} characters.
+    lastname:
+        not_blank: The last name cannot be empty.
+        max_length: The last name cannot exceed {{ limit }} characters.
+    image:
+        max_size: The image cannot exceed 2 MB.
+        mime_types: Please upload a valid image (JPG, PNG, WebP...).
+
+video:
+    title:
+        not_blank: The title cannot be empty.
+        min_length: The title must contain at least {{ limit }} characters.
+        max_length: The title cannot exceed {{ limit }} characters.
+    link:
+        not_blank: The video link cannot be empty.
+    description:
+        not_blank: The description cannot be empty.
+        min_length: The description must contain at least {{ limit }} characters.
+    forbidden_word: This field contains a forbidden word.

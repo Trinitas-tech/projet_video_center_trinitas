@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ video.title }} - Vidéo Center{% endblock %}
+
+{% block body %}
+    <div class="d-flex flex-column align-items-center">
+        <iframe width="640" height="480" style="max-width: 100%;"
+                src="{{ video.videoLink|embed }}"
+                allowfullscreen></iframe>
+
+        <div class="card bg-black text-light mt-3" style="max-width: 640px; width: 100%;">
+            <div class="card-body">
+                <h1 class="h4">
+                    {{ video.title }}
+                    {% if video.premiumVideo %}
+                        <span class="badge bg-warning text-dark">{{ 'video.premium'|trans }}</span>
+                    {% endif %}
+                </h1>
+                <p>{{ video.description }}</p>
+                <p class="small text-secondary text-end mb-0">
+                    {{ 'video.posted_on'|trans }} {{ video.createdAt|date('d/m/Y H:i') }}
+                    {{ 'video.by'|trans }} {{ video.user.firstname }} {{ video.user.lastname }}<br>
+                    {{ 'video.updated_on'|trans }} {{ video.updatedAt|date('d/m/Y H:i') }}
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            {# Seul le créateur de la vidéo peut la modifier ou la supprimer #}
+            {% if app.user and app.user == video.user %}
+                <a href="{{ path('app_video_edit', {id: video.id}) }}" class="btn btn-warning">{{ 'action.edit'|trans }}</a>
+
+                <form method="post" action="{{ path('app_video_delete', {id: video.id}) }}"
+                      class="d-inline" id="delete-form">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ video.id) }}">
+                    <button type="submit" class="btn btn-danger">{{ 'action.delete'|trans }}</button>
+                </form>
+            {% endif %}
+
+            <a href="{{ path('app_home') }}" class="btn btn-secondary">{{ 'action.back'|trans }}</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        // Confirmation JavaScript avant suppression (exigée en Partie 5)
+        const deleteForm = document.getElementById('delete-form');
+        if (deleteForm) {
+            deleteForm.addEventListener('submit', function (e) {
+                if (!confirm({{ 'video.delete_confirm'|trans|json_encode|raw }})) {
+                    e.preventDefault();
+                }
+            });
+        }
+    </script>
+{% endblock %}

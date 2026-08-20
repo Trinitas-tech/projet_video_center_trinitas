@@ -1,0 +1,33 @@
+registration:
+    email_already_used: Il existe déjà un compte avec cet email.
+
+validation:
+    email:
+        not_blank: L'email ne peut pas être vide.
+        invalid: L'email n'est pas valide.
+        max_length: L'email ne peut pas dépasser {{ limit }} caractères.
+    password:
+        not_blank: Le mot de passe ne peut pas être vide.
+        mismatch: Les mots de passe ne correspondent pas.
+        min_length: Le mot de passe doit contenir au moins {{ limit }} caractères.
+    firstname:
+        not_blank: Le prénom ne peut pas être vide.
+        max_length: Le prénom ne peut pas dépasser {{ limit }} caractères.
+    lastname:
+        not_blank: Le nom ne peut pas être vide.
+        max_length: Le nom ne peut pas dépasser {{ limit }} caractères.
+    image:
+        max_size: L'image ne peut pas dépasser 2 Mo.
+        mime_types: Veuillez envoyer une image valide (JPG, PNG, WebP...).
+
+video:
+    title:
+        not_blank: Le titre ne peut pas être vide.
+        min_length: Le titre doit contenir au moins {{ limit }} caractères.
+        max_length: Le titre ne peut pas dépasser {{ limit }} caractères.
+    link:
+        not_blank: Le lien vidéo ne peut pas être vide.
+    description:
+        not_blank: La description ne peut pas être vide.
+        min_length: La description doit contenir au moins {{ limit }} caractères.
+    forbidden_word: Ce champ contient un mot interdit.

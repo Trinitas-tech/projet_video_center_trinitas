@@ -1,0 +1,25 @@
+<div class="card bg-black text-light h-100">
+    <div class="card-body text-center">
+        {% if video.premiumVideo %}
+            <span class="badge bg-warning text-dark mb-2">{{ 'video.premium'|trans }}</span>
+        {% endif %}
+        <div class="ratio" style="max-width: 300px; margin: 0 auto;">
+            <iframe width="300" height="200"
+                    src="{{ video.videoLink|embed }}"
+                    allowfullscreen></iframe>
+        </div>
+        <h5 class="card-title mt-2">
+            <a href="{{ path('app_video_show', {id: video.id}) }}"
+               class="text-light text-decoration-none">
+                {{ video.title|u.truncate(20, '...') }}
+            </a>
+        </h5>
+        <p class="card-text text-secondary">
+            {{ video.description|u.truncate(25, '...') }}
+        </p>
+        <p class="small text-secondary mb-0">
+            {{ 'video.posted'|trans }} {{ video.createdAt|ago }}
+            {{ 'video.by'|trans }} {{ video.user.firstname }} {{ video.user.lastname }}
+        </p>
+    </div>
+</div>

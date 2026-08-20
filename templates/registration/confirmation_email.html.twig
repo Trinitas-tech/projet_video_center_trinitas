@@ -1,0 +1,11 @@
+<h1>{{ 'email.verify.title'|trans }}</h1>
+
+<p>{{ 'email.verify.body'|trans }}</p>
+
+<p>
+    <a href="{{ signedUrl|raw }}">{{ 'email.verify.button'|trans }}</a>
+</p>
+
+<p>{{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}</p>
+
+<p>{{ 'email.signature'|trans }}</p>

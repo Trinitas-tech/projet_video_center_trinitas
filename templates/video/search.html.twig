@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'search.title'|trans }} - Vidéo Center{% endblock %}
+
+{% block body %}
+    <div class="text-center mb-4">
+        <h1>{{ 'search.title'|trans }}</h1>
+        {% if term %}
+            <p class="text-secondary">
+                {{ 'search.results_for'|trans({'%term%': term}) }}
+            </p>
+        {% endif %}
+        <p class="fw-bold">
+            {{ 'search.count'|trans({'%count%': videos.getTotalItemCount}) }}
+        </p>
+    </div>
+
+    <div class="row g-4">
+        {% for video in videos %}
+            <div class="col-12 col-md-6 col-lg-4">
+                {% include 'video/_card.html.twig' with {video: video} %}
+            </div>
+        {% else %}
+            <p class="text-center">{{ 'search.no_results'|trans }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        {{ knp_pagination_render(videos) }}
+    </div>
+{% endblock %}
