@@ -14,6 +14,10 @@
 /.phpunit.cache/
 ###< phpunit/phpunit ###
 
+# photos de profil uploadées (on garde le dossier, pas les fichiers)
+/public/uploads/profiles/*
+!/public/uploads/profiles/.gitkeep
+
 ###> symfony/asset-mapper ###
 /public/assets/
 /assets/vendor/
