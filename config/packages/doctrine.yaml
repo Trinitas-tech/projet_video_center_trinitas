@@ -8,6 +8,11 @@ doctrine:
 
         profiling_collect_backtrace: '%kernel.debug%'
         use_savepoints: true
+        # Le serveur MySQL a MyISAM comme moteur par défaut, qui ignore les clés étrangères
+        default_table_options:
+            engine: InnoDB
+            charset: utf8mb4
+            collation: utf8mb4_general_ci
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
