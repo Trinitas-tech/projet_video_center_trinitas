@@ -3,11 +3,22 @@
         {% if video.premiumVideo %}
             <span class="badge bg-warning text-dark mb-2">{{ 'video.premium'|trans }}</span>
         {% endif %}
-        <div class="ratio" style="max-width: 300px; margin: 0 auto;">
-            <iframe width="300" height="200"
+
+        {# Miniature 300x200 cliquable : l'image est visible immédiatement,
+           le lecteur se trouve sur la page de détail #}
+        {% set thumbnail = video.videoLink|youtube_thumbnail %}
+        {% if thumbnail %}
+            <a href="{{ path('app_video_show', {id: video.id}) }}">
+                <img src="{{ thumbnail }}" alt="{{ video.title }}"
+                     width="300" height="200" loading="lazy"
+                     class="rounded" style="object-fit: cover; max-width: 100%;">
+            </a>
+        {% else %}
+            <iframe width="300" height="200" style="max-width: 100%;"
                     src="{{ video.videoLink|embed }}"
                     allowfullscreen></iframe>
-        </div>
+        {% endif %}
+
         <h5 class="card-title mt-2">
             <a href="{{ path('app_video_show', {id: video.id}) }}"
                class="text-light text-decoration-none">
