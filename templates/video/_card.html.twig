@@ -1,39 +1,25 @@
-<article>
-    {# ===== Miniature 16:9 cliquable, comme sur YouTube ===== #}
-    <div class="position-relative">
-        <a href="{{ path('app_video_show', {id: video.id}) }}">
-            <div class="ratio ratio-16x9 rounded-3 overflow-hidden bg-black">
-                {% set thumbnail = video.videoLink|youtube_thumbnail %}
-                {% if thumbnail %}
-                    <img src="{{ thumbnail }}" alt="{{ video.title }}"
-                         style="object-fit: cover;" loading="lazy">
-                {% else %}
-                    <iframe src="{{ video.videoLink|embed }}" allowfullscreen></iframe>
-                {% endif %}
-            </div>
-        </a>
+<div class="card bg-black text-light h-100">
+    <div class="card-body text-center">
         {% if video.premiumVideo %}
-            <span class="badge bg-warning text-dark position-absolute"
-                  style="right: .5rem; bottom: .5rem;">{{ 'video.premium'|trans }}</span>
+            <span class="badge bg-warning text-dark mb-2">{{ 'video.premium'|trans }}</span>
         {% endif %}
-    </div>
-
-    {# ===== Avatar + titre + auteur + temps écoulé ===== #}
-    <div class="d-flex gap-2 mt-2">
-        <img src="{{ video.user.imageName ? vich_uploader_asset(video.user, 'imageFile') : asset('images/default-profile.svg') }}"
-             alt="" width="36" height="36"
-             class="rounded-circle flex-shrink-0 mt-1" style="object-fit: cover;">
-        <div class="overflow-hidden">
+        <div class="ratio" style="max-width: 300px; margin: 0 auto;">
+            <iframe width="300" height="200"
+                    src="{{ video.videoLink|embed }}"
+                    allowfullscreen></iframe>
+        </div>
+        <h5 class="card-title mt-2">
             <a href="{{ path('app_video_show', {id: video.id}) }}"
-               class="text-light text-decoration-none fw-semibold d-block">
+               class="text-light text-decoration-none">
                 {{ video.title|u.truncate(20, '...') }}
             </a>
-            <div class="small text-secondary">
-                {{ video.user.firstname }} {{ video.user.lastname }} · {{ video.createdAt|ago }}
-            </div>
-            <div class="small text-secondary">
-                {{ video.description|u.truncate(25, '...') }}
-            </div>
-        </div>
+        </h5>
+        <p class="card-text text-secondary">
+            {{ video.description|u.truncate(25, '...') }}
+        </p>
+        <p class="small text-secondary mb-0">
+            {{ 'video.posted'|trans }} {{ video.createdAt|ago }}
+            {{ 'video.by'|trans }} {{ video.user.firstname }} {{ video.user.lastname }}
+        </p>
     </div>
-</article>
+</div>
