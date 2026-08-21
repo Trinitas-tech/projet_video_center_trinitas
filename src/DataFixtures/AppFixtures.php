@@ -62,13 +62,14 @@ class AppFixtures extends Fixture
             ['Take On Me', 'https://www.youtube.com/watch?v=djV11Xbc914', 'Le clip d\'animation révolutionnaire de A-ha, un classique des années 80.', true],
         ];
 
-        foreach ($videosData as $i => [$title, $link, $description, $premium]) {
+        foreach ($videosData as [$title, $link, $description, $premium]) {
             $video = new Video();
             $video->setTitle($title)
                 ->setVideoLink($link)
                 ->setDescription($description)
                 ->setPremiumVideo($premium)
-                ->setUser($users[$i % count($users)]);
+                // toutes les vidéos appartiennent au compte principal
+                ->setUser($users[0]);
             $manager->persist($video);
         }
 
